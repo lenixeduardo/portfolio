@@ -11,6 +11,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   const [isHovered, setIsHovered] = useState(false)
+  const [hasImage, setHasImage] = useState(!!project.imageUrl)
 
   // Generate gradient based on language
   const gradientMap: Record<string, string> = {
@@ -30,12 +31,26 @@ export function ProjectCard({ project }: ProjectCardProps) {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Background gradient with animation */}
-        <div
-          className={`absolute inset-0 bg-gradient-to-br ${gradient} transition-all duration-300 ${
-            isHovered ? 'opacity-100' : 'opacity-75'
-          }`}
-        ></div>
+        {/* Background image or gradient with animation */}
+        {hasImage && project.imageUrl ? (
+          <div
+            className={`absolute inset-0 transition-all duration-300 ${
+              isHovered ? 'opacity-100' : 'opacity-75'
+            }`}
+            style={{
+              backgroundImage: `url(${project.imageUrl})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+            onError={() => setHasImage(false)}
+          ></div>
+        ) : (
+          <div
+            className={`absolute inset-0 bg-gradient-to-br ${gradient} transition-all duration-300 ${
+              isHovered ? 'opacity-100' : 'opacity-75'
+            }`}
+          ></div>
+        )}
 
         {/* Overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
@@ -65,9 +80,11 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <h3 className="heading-md mb-2 group-hover:translate-x-1 transition-smooth">
               {project.name}
             </h3>
-            <p className="text-muted line-clamp-2 text-sm md:text-base">
-              {project.description || 'No description available'}
-            </p>
+            {(project.readmeDescription || project.description) && (
+              <p className="text-muted line-clamp-2 text-sm md:text-base">
+                {project.readmeDescription || project.description}
+              </p>
+            )}
           </div>
         </div>
 
