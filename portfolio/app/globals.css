@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --secondary: 0 0% 20%;
+    --accent: 51 100% 50%;
+    --muted: 0 0% 15%;
+    --border: 0 0% 8%;
+  }
+
+  body {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Noise texture background */
+@layer utilities {
+  .bg-noise {
+    background-image: 
+      url("data:image/svg+xml,%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' seed='1'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+}
+
+/* Smooth transitions */
+@layer components {
+  .transition-smooth {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .transition-smooth-lg {
+    @apply transition-all duration-500 ease-out;
+  }
+}
+
+/* Glass effect */
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-hover {
+    @apply glass hover:bg-white/[0.05] transition-smooth;
+  }
+}
+
+/* Buttons */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-2.5 font-semibold transition-smooth text-sm;
+  }
+
+  .btn-primary {
+    @apply btn bg-white text-black hover:bg-white/90 hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply btn glass text-white hover:bg-white/[0.08];
+  }
+
+  .btn-icon {
+    @apply inline-flex items-center justify-center w-10 h-10 rounded-full transition-smooth;
+  }
+}
+
+/* Headings */
+@layer components {
+  .heading-display {
+    font-family: var(--font-space-grotesk);
+    @apply text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight;
+  }
+
+  .heading-lg {
+    font-family: var(--font-space-grotesk);
+    @apply text-3xl md:text-4xl font-bold;
+  }
+
+  .heading-md {
+    font-family: var(--font-space-grotesk);
+    @apply text-2xl md:text-3xl font-bold;
+  }
+
+  .heading-sm {
+    font-family: var(--font-space-grotesk);
+    @apply text-lg md:text-xl font-bold;
+  }
+}
+
+/* Text utilities */
+@layer components {
+  .text-muted {
+    @apply text-white/60;
+  }
+
+  .text-subtle {
+    @apply text-white/40;
+  }
+
+  .badge-accent {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-emerald-400;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.6s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out;
+  }
+}
+
+/* Code block styling */
+@layer components {
+  .code-block {
+    @apply bg-white/[0.02] border border-white/[0.05] rounded-lg p-4 overflow-x-auto;
+  }
+
+  code {
+    font-family: 'Courier New', monospace;
+    @apply text-sm;
+  }
+
+  pre {
+    @apply overflow-x-auto;
+  }
+}
+
+/* Scrollbar */
+@layer utilities {
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Selection */
+::selection {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Utility for grid backgrounds */
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
+
+/* Smooth page transitions */
+@layer utilities {
+  .page-enter {
+    animation: fadeIn 0.5s ease-out;
+  }
+}
