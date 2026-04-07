@@ -1,10 +1,10 @@
-# Lenix Eduardo - Premium Developer Portfolio
+# Lenix Eduardo - Portfolio
 
 A production-grade developer portfolio built with Next.js, TypeScript, Tailwind CSS, and modern web technologies. Features real-time GitHub integration, glassmorphism design, smooth animations, and responsive layouts.
 
-## ✨ Features
+##  Features
 
-- **Premium Design**: Dark mode with glassmorphism effects and smooth animations
+- **Design**: Dark mode with glassmorphism effects and smooth animations
 - **GitHub Integration**: Automatically fetches and displays repositories with caching
 - **Responsive**: Mobile-first design with excellent performance
 - **Type-Safe**: Full TypeScript support for reliability
@@ -12,7 +12,8 @@ A production-grade developer portfolio built with Next.js, TypeScript, Tailwind 
 - **Accessibility**: Semantic HTML and ARIA compliant
 - **Fast**: Next.js 14 with App Router and server components
 
-## 🏗️ Project Structure
+## 
+Project Structure
 
 ```
 portfolio/
