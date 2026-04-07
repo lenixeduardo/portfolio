@@ -6,7 +6,7 @@ import { Footer } from '@/components/Footer'
 import { getTopRepos } from '@/lib/github'
 
 export default async function Home() {
-  const projects = await getTopRepos(6)
+  const projects = await getTopRepos(5)
 
   return (
     <main className="min-h-screen">

@@ -15,7 +15,7 @@ export interface RepositoryWithSlug extends Repository {
 async function fetchGitHubRepos(): Promise<Repository[]> {
   try {
     const response = await fetch(
-      'https://api.github.com/users/lenixeduardo/repos?per_page=100',
+      'https://api.github.com/users/lenixeduardo/repos?per_page=100&sort=created&direction=desc',
       {
         headers: {
           Accept: 'application/vnd.github.v3+json',
@@ -30,10 +30,8 @@ async function fetchGitHubRepos(): Promise<Repository[]> {
 
     const repos: Repository[] = await response.json()
 
-    // Filter out forks and sort by stars
-    return repos
-      .filter((repo) => !repo.fork)
-      .sort((a, b) => b.stargazers_count - a.stargazers_count)
+    // Filter out forks
+    return repos.filter((repo) => !repo.fork)
   } catch (error) {
     console.error('Failed to fetch GitHub repos:', error)
     return []
@@ -57,7 +55,7 @@ export async function getRepo(slug: string): Promise<RepositoryWithSlug | null> 
   return repos.find((repo) => repo.slug === slug) || null
 }
 
-export async function getTopRepos(limit: number = 6): Promise<RepositoryWithSlug[]> {
+export async function getTopRepos(limit: number = 5): Promise<RepositoryWithSlug[]> {
   const repos = await getRepos()
   return repos.slice(0, limit)
 }
