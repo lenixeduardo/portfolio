@@ -205,7 +205,7 @@ ${repo.name}/
             <h2 className="heading-lg mb-6">Ready to explore?</h2>
             <p className="text-muted mb-8 max-w-2xl mx-auto">
               Check out the source code, documentation, and join the community of developers pushing the
-              boundaries of what's possible.
+              boundaries of what&apos;s possible.
             </p>
             <a
               href={repo.html_url}

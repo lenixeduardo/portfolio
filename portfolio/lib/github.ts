@@ -5,6 +5,8 @@ export interface Repository {
   language: string | null
   stargazers_count: number
   html_url: string
+  homepage: string | null
+  fork: boolean
   topics?: string[]
 }
 
