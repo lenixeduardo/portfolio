@@ -61,17 +61,9 @@ export function Footer() {
               >
                 <Linkedin size={18} />
               </a>
+            
               <a
-                href="https://twitter.com/xambinho"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted hover:text-white transition-smooth"
-                title="Twitter"
-              >
-                <Twitter size={18} />
-              </a>
-              <a
-                href="mailto:hello@lenix.dev"
+                href="mailto:lenix.camargo@gmail.com"
                 className="text-muted hover:text-white transition-smooth"
                 title="Email"
               >

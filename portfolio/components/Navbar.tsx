@@ -14,7 +14,7 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto w-full px-6 py-4 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="heading-sm hover:opacity-80 transition-smooth">
-            Lenix Eduardo
+             Eduardo Lenix
           </Link>
 
           {/* Center Links */}

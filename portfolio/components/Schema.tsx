@@ -9,7 +9,7 @@ export function JsonLdSchema() {
     image: 'https://lenixeduardo.dev/og-image.png',
     description:
       'Full Stack Developer focused on performance, scalability, and clean architecture.',
-    email: 'hello@lenix.dev',
+    email: 'lenix.camargo@gmail.com',
     jobTitle: 'Full Stack Developer',
     worksFor: {
       '@type': 'Organization',

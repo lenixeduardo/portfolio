@@ -18,12 +18,12 @@ export function Contact() {
 
           {/* Email CTA */}
           <a
-            href="mailto:hello@lenix.dev"
+            href="mailto:lenix.camargo@gmail.com"
             className="inline-block mb-12 animate-fade-in-up group"
             style={{ animationDelay: '0.1s' }}
           >
             <div className="text-2xl md:text-4xl font-bold font-space-grotesk group-hover:text-emerald-400 transition-smooth">
-              hello@lenix.dev
+              lenix.camargo@gmail.com
             </div>
           </a>
 
@@ -47,17 +47,9 @@ export function Contact() {
             >
               <Linkedin size={20} className="group-hover:scale-110 transition-smooth" />
             </a>
+            
             <a
-              href="https://twitter.com/xambinho"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-icon glass group hover:bg-white/10"
-              title="Twitter"
-            >
-              <Twitter size={20} className="group-hover:scale-110 transition-smooth" />
-            </a>
-            <a
-              href="mailto:hello@lenix.dev"
+              href="mailto:lenix.camargo@gmail.com"
               className="btn-icon glass group hover:bg-white/10"
               title="Email"
             >
