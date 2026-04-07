@@ -40,7 +40,7 @@ portfolio/
 └── next.config.js
 ```
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -92,77 +92,10 @@ const response = await fetch(
 )
 ```
 
-2. Update social links in components as needed
-
-### Customization
-
-#### Colors & Theme
-
-Edit `app/globals.css` CSS variables:
-```css
-:root {
-  --background: 0 0% 0%;
-  --foreground: 0 0% 100%;
-  --accent: 51 100% 50%; /* Change accent color here */
-}
-```
-
-#### Fonts
-
-Modify `app/layout.tsx`:
-```typescript
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-space-grotesk',
-})
-```
-
-#### Content
-
-Update text in component files:
-- Hero section: `components/Hero.tsx`
-- Contact info: `components/Contact.tsx`
-- Social links: Throughout components
 
 ## 📦 Build & Deploy
 
-### Local Build
 
-```bash
-npm run build
-npm start
-```
-
-### Deploy to Vercel (Recommended)
-
-1. **Push to GitHub**
-```bash
-git push origin main
-```
-
-2. **Connect to Vercel**
-   - Go to [vercel.com](https://vercel.com)
-   - Import repository
-   - Select Next.js as framework
-   - Deploy
-
-3. **Custom Domain**
-   - In Vercel dashboard, go to Settings > Domains
-   - Add your custom domain
-
-### Deploy to Other Platforms
-
-#### Netlify
-```bash
-npm run build
-# Deploy the .next folder
-```
-
-#### AWS Amplify
-```bash
-npm run build
-# Configure amplify.yml for Next.js
-```
 
 ## 🎨 Design Features
 
@@ -247,4 +180,4 @@ For issues or questions, open an issue or contact via the portfolio contact form
 
 ---
 
-Built with ❤️ by Lenix Eduardo
+Built  by Lenix Eduardo
